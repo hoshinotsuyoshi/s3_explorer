@@ -1,0 +1,19 @@
+h1 Listing buckets
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @buckets.each do |bucket|
+      tr
+        td = link_to 'Show', bucket
+        td = link_to 'Edit', edit_bucket_path(bucket)
+        td = link_to 'Destroy', bucket, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Bucket', new_bucket_path

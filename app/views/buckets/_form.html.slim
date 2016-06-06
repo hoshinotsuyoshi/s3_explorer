@@ -1,0 +1,9 @@
+= form_for @bucket do |f|
+  - if @bucket.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@bucket.errors.count, "error")} prohibited this bucket from being saved:"
+      ul
+        - @bucket.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit
