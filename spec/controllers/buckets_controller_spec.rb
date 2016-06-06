@@ -19,7 +19,7 @@ RSpec.describe BucketsController, type: :controller do
         }
       }
       bucket = Bucket.new valid_attributes
-      get :index, {}, valid_session
+      get :index, params: valid_attributes, session: valid_session
       expect(assigns(:buckets)).to eq([bucket])
     end
   end
@@ -32,7 +32,7 @@ RSpec.describe BucketsController, type: :controller do
         }
       }
       bucket = Bucket.new valid_attributes
-      get :show, {id: bucket.to_param}, valid_session
+      get :show, params: {id: bucket.to_param}, session: valid_session
       expect(assigns(:bucket)).to eq(bucket)
     end
   end
