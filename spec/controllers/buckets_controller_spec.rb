@@ -18,7 +18,7 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-RSpec.describe BucketsController, :type => :controller do
+RSpec.describe BucketsController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # Bucket. As you add validations to Bucket, be sure to
@@ -47,7 +47,7 @@ RSpec.describe BucketsController, :type => :controller do
   describe "GET show" do
     it "assigns the requested bucket as @bucket" do
       bucket = Bucket.create! valid_attributes
-      get :show, {:id => bucket.to_param}, valid_session
+      get :show, {id: bucket.to_param}, valid_session
       expect(assigns(:bucket)).to eq(bucket)
     end
   end
@@ -62,7 +62,7 @@ RSpec.describe BucketsController, :type => :controller do
   describe "GET edit" do
     it "assigns the requested bucket as @bucket" do
       bucket = Bucket.create! valid_attributes
-      get :edit, {:id => bucket.to_param}, valid_session
+      get :edit, {id: bucket.to_param}, valid_session
       expect(assigns(:bucket)).to eq(bucket)
     end
   end
@@ -71,30 +71,30 @@ RSpec.describe BucketsController, :type => :controller do
     describe "with valid params" do
       it "creates a new Bucket" do
         expect {
-          post :create, {:bucket => valid_attributes}, valid_session
+          post :create, {bucket: valid_attributes}, valid_session
         }.to change(Bucket, :count).by(1)
       end
 
       it "assigns a newly created bucket as @bucket" do
-        post :create, {:bucket => valid_attributes}, valid_session
+        post :create, {bucket: valid_attributes}, valid_session
         expect(assigns(:bucket)).to be_a(Bucket)
         expect(assigns(:bucket)).to be_persisted
       end
 
       it "redirects to the created bucket" do
-        post :create, {:bucket => valid_attributes}, valid_session
+        post :create, {bucket: valid_attributes}, valid_session
         expect(response).to redirect_to(Bucket.last)
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved bucket as @bucket" do
-        post :create, {:bucket => invalid_attributes}, valid_session
+        post :create, {bucket: invalid_attributes}, valid_session
         expect(assigns(:bucket)).to be_a_new(Bucket)
       end
 
       it "re-renders the 'new' template" do
-        post :create, {:bucket => invalid_attributes}, valid_session
+        post :create, {bucket: invalid_attributes}, valid_session
         expect(response).to render_template("new")
       end
     end
@@ -108,20 +108,20 @@ RSpec.describe BucketsController, :type => :controller do
 
       it "updates the requested bucket" do
         bucket = Bucket.create! valid_attributes
-        put :update, {:id => bucket.to_param, :bucket => new_attributes}, valid_session
+        put :update, {id: bucket.to_param, bucket: new_attributes}, valid_session
         bucket.reload
         skip("Add assertions for updated state")
       end
 
       it "assigns the requested bucket as @bucket" do
         bucket = Bucket.create! valid_attributes
-        put :update, {:id => bucket.to_param, :bucket => valid_attributes}, valid_session
+        put :update, {id: bucket.to_param, bucket: valid_attributes}, valid_session
         expect(assigns(:bucket)).to eq(bucket)
       end
 
       it "redirects to the bucket" do
         bucket = Bucket.create! valid_attributes
-        put :update, {:id => bucket.to_param, :bucket => valid_attributes}, valid_session
+        put :update, {id: bucket.to_param, bucket: valid_attributes}, valid_session
         expect(response).to redirect_to(bucket)
       end
     end
@@ -129,13 +129,13 @@ RSpec.describe BucketsController, :type => :controller do
     describe "with invalid params" do
       it "assigns the bucket as @bucket" do
         bucket = Bucket.create! valid_attributes
-        put :update, {:id => bucket.to_param, :bucket => invalid_attributes}, valid_session
+        put :update, {id: bucket.to_param, bucket: invalid_attributes}, valid_session
         expect(assigns(:bucket)).to eq(bucket)
       end
 
       it "re-renders the 'edit' template" do
         bucket = Bucket.create! valid_attributes
-        put :update, {:id => bucket.to_param, :bucket => invalid_attributes}, valid_session
+        put :update, {id: bucket.to_param, bucket: invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
     end
@@ -145,13 +145,13 @@ RSpec.describe BucketsController, :type => :controller do
     it "destroys the requested bucket" do
       bucket = Bucket.create! valid_attributes
       expect {
-        delete :destroy, {:id => bucket.to_param}, valid_session
+        delete :destroy, {id: bucket.to_param}, valid_session
       }.to change(Bucket, :count).by(-1)
     end
 
     it "redirects to the buckets list" do
       bucket = Bucket.create! valid_attributes
-      delete :destroy, {:id => bucket.to_param}, valid_session
+      delete :destroy, {id: bucket.to_param}, valid_session
       expect(response).to redirect_to(buckets_url)
     end
   end

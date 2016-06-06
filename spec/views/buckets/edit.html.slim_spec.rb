@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "buckets/edit", :type => :view do
+RSpec.describe "buckets/edit", type: :view do
   before(:each) do
     @bucket = assign(:bucket, Bucket.create!())
   end
