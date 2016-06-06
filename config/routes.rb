@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  resources :buckets, only: [:show, :index]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :buckets, only: [:show, :index] do
+    resources :prefixes, only: [:show, :index]
+  end
 end
