@@ -1,0 +1,19 @@
+h1 Listing prefixes
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @prefixes.each do |prefix|
+      tr
+        td = link_to 'Show', prefix
+        td = link_to 'Edit', edit_prefix_path(prefix)
+        td = link_to 'Destroy', prefix, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Prefix', new_prefix_path
