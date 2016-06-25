@@ -1,3 +1,20 @@
 p#notice = notice
 
+.top
+  = link_to '/', bucket_path(@bucket, prefix: '')
+
+.objects
+  - @folders.each do |folder|
+    = link_to folder.prefix, bucket_path(@bucket, prefix: folder.prefix)
+    br
+
+.objects
+  - @files.each do |file|
+    = link_to file.key
+    br
+
+.back
+
+hr
+
 = link_to 'Back', buckets_path
