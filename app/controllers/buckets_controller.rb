@@ -13,8 +13,9 @@ class BucketsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_bucket
-      @bucket = Bucket.find(params[:id])
-    end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_bucket
+    @bucket = Bucket.find(params[:id])
+  end
 end
