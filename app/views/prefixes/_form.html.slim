@@ -1,9 +1,0 @@
-= form_for @prefix do |f|
-  - if @prefix.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@prefix.errors.count, "error")} prohibited this prefix from being saved:"
-      ul
-        - @prefix.errors.full_messages.each do |message|
-          li = message
-
-  .actions = f.submit

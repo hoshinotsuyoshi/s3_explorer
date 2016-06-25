@@ -1,0 +1,9 @@
+= form_for @s3_object do |f|
+  - if @s3_object.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@s3_object.errors.count, "error")} prohibited this s3_object from being saved:"
+      ul
+        - @s3_object.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit
