@@ -3,21 +3,25 @@ module S3Object
   class File
     include ActiveModel::Model
 
-    def self.select(bucket:, prefix:)
-      select_child_contents_by_prefix(
-        bucket: bucket,
-        prefix: prefix
-      ).map do |file|
-        new(file)
+    class << self
+      def select(bucket:, prefix:)
+        select_child_contents_by_prefix(
+          bucket: bucket,
+          prefix: prefix
+        ).map do |file|
+          new(file)
+        end
       end
-    end
 
-    def self.select_child_contents_by_prefix(bucket:, prefix:)
-      s3 = Aws::S3::Client.new
-      resp = s3.list_objects_v2(bucket: bucket, prefix: prefix)
-      resp.contents.select do |content|
-        content.key =~ /\A#{prefix}([\s\S]*)\z/ &&
-          !Regexp.last_match(1).include?('/')
+      private
+
+      def select_child_contents_by_prefix(bucket:, prefix:)
+        s3 = Aws::S3::Client.new
+        resp = s3.list_objects_v2(bucket: bucket, prefix: prefix)
+        resp.contents.select do |content|
+          content.key =~ /\A#{prefix}([\s\S]*)\z/ &&
+            !Regexp.last_match(1).include?('/')
+        end
       end
     end
 
