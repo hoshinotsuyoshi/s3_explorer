@@ -8,4 +8,4 @@ table
   tbody
     - @buckets.each do |bucket|
       tr
-        td = link_to 'Show', bucket
+        td = link_to bucket.name, bucket_path(bucket)
