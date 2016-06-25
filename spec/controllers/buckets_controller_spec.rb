@@ -6,10 +6,6 @@ RSpec.describe BucketsController, type: :controller do
     { name: 'my-bucket' }
   end
 
-  let(:invalid_attributes) do
-    { name: '' }
-  end
-
   let(:valid_session) { {} }
 
   describe 'GET index' do
