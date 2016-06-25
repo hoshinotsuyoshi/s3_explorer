@@ -12,13 +12,17 @@ RSpec.describe S3Object::Folder, type: :model do
         }
       }
       files = S3Object::Folder.select(bucket: 'test', prefix: 'my-folder/')
-      expect(files).to eq [S3Object::Folder.new(double(:common_prefix, prefix: 'my-folder/'))]
+      expect(files).to eq [
+        S3Object::Folder.new(double(:common_prefix, prefix: 'my-folder/'))
+      ]
     end
   end
 
   describe '#prefix' do
     it "returns same value of #initialize's first arg" do
-      folder = S3Object::Folder.new(double(:common_prefix, prefix: 'my-folder/'))
+      folder = S3Object::Folder.new(
+        double(:common_prefix, prefix: 'my-folder/')
+      )
       expect(folder.prefix).to eq 'my-folder/'
     end
   end

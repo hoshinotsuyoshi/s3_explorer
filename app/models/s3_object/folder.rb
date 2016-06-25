@@ -7,7 +7,11 @@ module S3Object
 
     def self.select(bucket:, prefix:)
       s3 = Aws::S3::Client.new
-      resp = s3.list_objects_v2(bucket: bucket, prefix: prefix, delimiter: DELIMITER)
+      resp = s3.list_objects_v2(
+        bucket: bucket,
+        prefix: prefix,
+        delimiter: DELIMITER
+      )
       resp.common_prefixes.map do |common_prefix|
         new(common_prefix)
       end

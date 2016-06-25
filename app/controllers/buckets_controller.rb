@@ -22,7 +22,13 @@ class BucketsController < ApplicationController
   end
 
   def set_s3_objects
-    @files   = S3Object::File.select(bucket: params[:id], prefix: params[:prefix])
-    @folders = S3Object::Folder.select(bucket: params[:id], prefix: params[:prefix])
+    @files = S3Object::File.select(
+      bucket: params[:id],
+      prefix: params[:prefix]
+    )
+    @folders = S3Object::Folder.select(
+      bucket: params[:id],
+      prefix: params[:prefix]
+    )
   end
 end
