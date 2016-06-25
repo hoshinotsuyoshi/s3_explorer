@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class PrefixesController < ApplicationController
   before_action :set_prefix, only: :show
 

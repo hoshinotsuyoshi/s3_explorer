@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class BucketsController < ApplicationController
   before_action :set_bucket, only: :show
 
