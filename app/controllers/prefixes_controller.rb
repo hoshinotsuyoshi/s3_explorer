@@ -62,13 +62,14 @@ class PrefixesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_prefix
-      @prefix = Prefix.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def prefix_params
-      params.fetch(:prefix, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_prefix
+    @prefix = Prefix.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def prefix_params
+    params.fetch(:prefix, {})
+  end
 end
