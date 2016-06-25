@@ -7,7 +7,8 @@ module S3Object
       s3 = Aws::S3::Client.new
       resp = s3.list_objects_v2(bucket: bucket, prefix: prefix)
       resp.contents.select do |content|
-        !Regexp.last_match(1).include?('/') if content.key =~ /\A#{prefix}([\s\S]*)\z/
+        content.key =~ /\A#{prefix}([\s\S]*)\z/ &&
+          !Regexp.last_match(1).include?('/')
       end.map do |file|
         new(file)
       end
