@@ -1,6 +1,4 @@
 # frozen_string_literal: true
-require 'rails_helper'
-
 RSpec.describe S3Object::File, type: :model do
   describe '.select' do
     it 'returns object list' do
