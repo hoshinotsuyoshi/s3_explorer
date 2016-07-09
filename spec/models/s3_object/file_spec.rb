@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 RSpec.describe S3Object::File, type: :model do
   describe '.select' do
     before do
