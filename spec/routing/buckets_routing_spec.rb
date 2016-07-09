@@ -7,7 +7,23 @@ RSpec.describe BucketsController, type: :routing do
     end
 
     it 'routes to #show' do
-      expect(get: '/buckets/1').to route_to('buckets#show', id: '1')
+      expect(get: '/buckets/my-bucket').
+        to route_to(
+          controller: 'buckets',
+          action: 'show',
+          id: 'my-bucket'
+      )
+    end
+
+    context 'bucket id contains dot(.)' do
+      it 'routes to #show' do
+        expect(get: '/buckets/my-bucket.com').
+          to route_to(
+            controller: 'buckets',
+            action: 'show',
+            id: 'my-bucket.com'
+        )
+      end
     end
   end
 end
