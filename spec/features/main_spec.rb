@@ -4,7 +4,7 @@ describe 'main process', type: :feature, js: true do
     create_s3_content(bucket: 'my-bucket1.com', key: 'my-folder1/my-file1')
   end
 
-  it "click bucket, folder, back-link" do
+  it 'click bucket, folder, back-link' do
     visit '/buckets'
 
     click_on 'my-bucket1.com'
