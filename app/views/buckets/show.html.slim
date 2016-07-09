@@ -12,14 +12,12 @@ p#notice = notice
     tbody
       - @folders.each do |folder|
         tr
-          th scope="row"
           td
             i.fa.fa-folder-o aria-hidden=true
             span &nbsp;
             = link_to folder.basename, bucket_path(@bucket, prefix: folder.prefix)
       - @files.each do |file|
         tr
-          th scope="row"
           td
             i.fa.fa-file-text-o aria-hidden=true
             span &nbsp;
