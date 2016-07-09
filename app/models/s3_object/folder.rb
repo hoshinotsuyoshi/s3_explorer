@@ -26,6 +26,10 @@ module S3Object
       @prefix.prefix
     end
 
+    def basename
+      ::File.basename(prefix) + '/'
+    end
+
     def ==(other)
       if other.is_a? self.class
         prefix == other.prefix

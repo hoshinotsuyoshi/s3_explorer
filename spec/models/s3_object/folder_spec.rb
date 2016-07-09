@@ -22,4 +22,14 @@ RSpec.describe S3Object::Folder, type: :model do
       expect(folder.prefix).to eq 'my-folder/'
     end
   end
+
+  describe '#basename' do
+    context 'when prefix is "my-folder/my-folder-child/"'
+    it 'returns my-folder-child/' do
+      folder = S3Object::Folder.new(
+        double(:common_prefix, prefix: 'my-folder/my-folder-child/')
+      )
+      expect(folder.basename).to eq 'my-folder-child/'
+    end
+  end
 end

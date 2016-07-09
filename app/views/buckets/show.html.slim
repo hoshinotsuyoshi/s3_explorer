@@ -16,7 +16,7 @@ p#notice = notice
           td
             i.fa.fa-folder-o aria-hidden=true
             span &nbsp;
-            = link_to folder.prefix, bucket_path(@bucket, prefix: folder.prefix)
+            = link_to folder.basename, bucket_path(@bucket, prefix: folder.prefix)
       - @files.each do |file|
         tr
           th scope="row"
