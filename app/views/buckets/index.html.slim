@@ -8,4 +8,7 @@ table
   tbody
     - @buckets.each do |bucket|
       tr
-        td = link_to bucket.name, bucket_path(bucket)
+        td
+          i.fa.fa-square-o aria-hidden=true
+          span &nbsp;
+          = link_to bucket.name, bucket_path(bucket)

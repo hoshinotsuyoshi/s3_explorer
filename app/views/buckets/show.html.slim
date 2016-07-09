@@ -1,5 +1,9 @@
 p#notice = notice
 
+i.fa.fa-square-o aria-hidden=true
+span &nbsp;
+= link_to @bucket.name, bucket_path(@bucket)
+
 .panel.panel-default
   .panel-heading
     = render_breadcrumbs
