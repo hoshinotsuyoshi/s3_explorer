@@ -18,4 +18,6 @@ RSpec.describe S3Object::File, type: :model do
       expect(file.key).to eq 'my-file'
     end
   end
+
+  it_behaves_like 'overridden equalness', method: :key
 end
