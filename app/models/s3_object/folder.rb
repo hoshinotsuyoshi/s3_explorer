@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 module S3Object
+  # s3 file prefix.
   class Folder
     include ActiveModel::Model
 
