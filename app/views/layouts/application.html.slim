@@ -9,4 +9,7 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
   body
-    = yield
+    ol.breadcrumb
+      = render_breadcrumbs tag: :li, separator: ''
+    .container
+      = yield

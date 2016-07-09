@@ -1,12 +1,6 @@
 p#notice = notice
 
-i.fa.fa-square-o aria-hidden=true
-span &nbsp;
-= link_to @bucket.name, bucket_path(@bucket)
-
 .panel.panel-default
-  .panel-heading
-    = render_breadcrumbs
   table.table
     thead
     tbody
@@ -22,9 +16,3 @@ span &nbsp;
             i.fa.fa-file-text-o aria-hidden=true
             span &nbsp;
             = link_to file.key
-
-.back
-
-hr
-
-= link_to 'Back', buckets_path

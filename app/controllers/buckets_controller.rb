@@ -12,7 +12,14 @@ class BucketsController < ApplicationController
   # GET /buckets/1
   # GET /buckets/1.json
   def show
-    add_breadcrumb params[:prefix]
+    add_breadcrumb @bucket.name, bucket_path
+
+    prefixes = []
+
+    params[:prefix]&.split('/')&.each do |prefix|
+      prefixes << prefix
+      add_breadcrumb prefix, "/buckets/#{@bucket.name}"
+    end
   end
 
   private
