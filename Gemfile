@@ -24,6 +24,8 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'fakes3'
+  gem 'glint'
   gem 'poltergeist'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
