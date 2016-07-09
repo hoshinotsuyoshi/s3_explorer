@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'guard-rspec', require: false
   gem 'pry-rails'
 end
 
