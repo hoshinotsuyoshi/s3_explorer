@@ -31,7 +31,7 @@ module S3Object
     end
 
     def key
-      ::File.basename @file.key
+      ::File.basename @file[:key]
     end
 
     def ==(other)

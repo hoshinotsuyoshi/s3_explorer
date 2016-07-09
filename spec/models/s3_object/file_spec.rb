@@ -8,13 +8,13 @@ RSpec.describe S3Object::File, type: :model do
         }
       }
       files = S3Object::File.select(bucket: 'test', prefix: '')
-      expect(files).to eq [S3Object::File.new(double(:file, key: 'my-file'))]
+      expect(files).to eq [S3Object::File.new(key: 'my-file')]
     end
   end
 
   describe '#key' do
     it "returns same value of #initialize's first arg" do
-      file = S3Object::File.new(double(:file, key: 'my-file'))
+      file = S3Object::File.new(key: 'my-file')
       expect(file.key).to eq 'my-file'
     end
   end
