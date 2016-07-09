@@ -12,7 +12,5 @@ describe 'main process', type: :feature, js: true do
     click_on 'my-folder1'
 
     expect(page).to have_content 'my-file1'
-
-    click_on 'Back'
   end
 end
