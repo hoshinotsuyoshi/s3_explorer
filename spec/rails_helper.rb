@@ -22,3 +22,7 @@ require 'rspec/rails'
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 RSpec.configure(&:infer_spec_type_from_file_location!)
+
+RSpec.configure do |config|
+  config.include CreateS3Content
+end
