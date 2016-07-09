@@ -8,11 +8,8 @@ RSpec.describe BucketsController, type: :controller do
   let(:valid_session) { {} }
 
   before do
-    s3 = Aws::S3::Client.new
-    s3.create_bucket(bucket: 'my-bucket')
+    create_s3_content(bucket: 'my-bucket', key: 'my-folder/my-file')
   end
-
-  after { FakeS3Server.restart }
 
   describe 'GET index' do
     it 'assigns all buckets as @buckets' do

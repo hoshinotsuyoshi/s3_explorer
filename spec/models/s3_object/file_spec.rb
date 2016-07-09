@@ -2,22 +2,11 @@
 RSpec.describe S3Object::File, type: :model do
   describe '.select' do
     before do
-      FakeS3Server.restart
-      s3 = Aws::S3::Client.new
-      s3.create_bucket(bucket: 'my-bucket')
-      Tempfile.open('file') do |file|
-        file.puts 'body'
-        file.flush
-        s3.put_object(
-          bucket: 'my-bucket',
-          key: 'my-file',
-          body: file
-        )
-      end
+      create_s3_content(bucket: 'my-bucket', key: 'my-folder/my-file')
     end
 
     it 'returns object list' do
-      files = S3Object::File.select(bucket: 'my-bucket', prefix: '')
+      files = S3Object::File.select(bucket: 'my-bucket', prefix: 'my-folder/')
       expect(files).to eq [S3Object::File.new(key: 'my-file')]
     end
   end
