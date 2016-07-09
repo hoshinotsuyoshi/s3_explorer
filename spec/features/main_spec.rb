@@ -9,5 +9,9 @@ describe 'main process', type: :feature, js: true do
     visit '/buckets'
     expect(page).to have_content 'Listing buckets'
     expect(page).to have_content 'my-bucket'
+
+    click_on 'my-bucket'
+
+    click_on 'Back'
   end
 end
