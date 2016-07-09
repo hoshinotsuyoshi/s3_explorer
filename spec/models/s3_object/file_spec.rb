@@ -16,8 +16,6 @@ RSpec.describe S3Object::File, type: :model do
       end
     end
 
-    after { FakeS3Server.restart }
-
     it 'returns object list' do
       files = S3Object::File.select(bucket: 'my-bucket', prefix: '')
       expect(files).to eq [S3Object::File.new(key: 'my-file')]
