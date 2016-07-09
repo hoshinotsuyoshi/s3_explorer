@@ -5,19 +5,25 @@ p#notice = notice
   span &nbsp;
   = link_to '/', bucket_path(@bucket, prefix: '')
 
-.objects
-  - @folders.each do |folder|
-    i.fa.fa-folder-o aria-hidden=true
-    span &nbsp;
-    = link_to folder.prefix, bucket_path(@bucket, prefix: folder.prefix)
-    br
-
-.objects
-  - @files.each do |file|
-    i.fa.fa-file-text-o aria-hidden=true
-    span &nbsp;
-    = link_to file.key
-    br
+.panel.panel-default
+  .panel-heading xxxx
+  table.table
+    thead
+    tbody
+      - @folders.each do |folder|
+        tr
+          th scope="row"
+          td
+            i.fa.fa-folder-o aria-hidden=true
+            span &nbsp;
+            = link_to folder.prefix, bucket_path(@bucket, prefix: folder.prefix)
+      - @files.each do |file|
+        tr
+          th scope="row"
+          td
+            i.fa.fa-file-text-o aria-hidden=true
+            span &nbsp;
+            = link_to file.key
 
 .back
 
