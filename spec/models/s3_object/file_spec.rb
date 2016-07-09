@@ -1,13 +1,25 @@
 # frozen_string_literal: true
 RSpec.describe S3Object::File, type: :model do
   describe '.select' do
+    before do
+      FakeS3Server.restart
+      s3 = Aws::S3::Client.new
+      s3.create_bucket(bucket: 'my-bucket')
+      Tempfile.open('file') do |file|
+        file.puts 'body'
+        file.flush
+        s3.put_object(
+          bucket: 'my-bucket',
+          key: 'my-file',
+          body: file
+        )
+      end
+    end
+
+    after { FakeS3Server.restart }
+
     it 'returns object list' do
-      Aws.config[:s3] = {
-        stub_responses: {
-          list_objects_v2: { contents: [{ key: 'my-file' }] }
-        }
-      }
-      files = S3Object::File.select(bucket: 'test', prefix: '')
+      files = S3Object::File.select(bucket: 'my-bucket', prefix: '')
       expect(files).to eq [S3Object::File.new(key: 'my-file')]
     end
   end
