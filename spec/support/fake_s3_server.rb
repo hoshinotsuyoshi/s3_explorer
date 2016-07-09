@@ -45,13 +45,3 @@ module FakeS3Server
     end
   end
 end
-
-RSpec.configure do |config|
-  config.before :suite do
-    FakeS3Server.start
-  end
-
-  config.after :suite do
-    FakeS3Server.stop
-  end
-end

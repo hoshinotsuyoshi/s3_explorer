@@ -26,4 +26,13 @@ RSpec.configure do |config|
     # `true` in RSpec 4.
     mocks.verify_partial_doubles = true
   end
+
+  # fake s3 server
+  config.before :suite do
+    FakeS3Server.start
+  end
+
+  config.after :suite do
+    FakeS3Server.stop
+  end
 end
