@@ -46,6 +46,7 @@ GEM
       jmespath (~> 1.0)
     aws-sdk-resources (2.3.21)
       aws-sdk-core (= 2.3.21)
+    breadcrumbs_on_rails (2.3.1)
     builder (3.2.2)
     byebug (9.0.5)
     capybara (2.7.1)
@@ -259,6 +260,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk
+  breadcrumbs_on_rails
   byebug
   capybara
   coffee-rails (~> 4.1.0)

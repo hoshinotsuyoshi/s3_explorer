@@ -12,6 +12,8 @@ class BucketsController < ApplicationController
   # GET /buckets/1
   # GET /buckets/1.json
   def show
+    add_breadcrumb bucket_path(params[:id])
+    add_breadcrumb params[:prefix]
   end
 
   private

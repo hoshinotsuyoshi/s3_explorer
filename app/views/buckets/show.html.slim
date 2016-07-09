@@ -1,12 +1,8 @@
 p#notice = notice
 
-.top
-  i.fa.fa-folder-o aria-hidden=true
-  span &nbsp;
-  = link_to '/', bucket_path(@bucket, prefix: '')
-
 .panel.panel-default
-  .panel-heading xxxx
+  .panel-heading
+    = render_breadcrumbs
   table.table
     thead
     tbody
