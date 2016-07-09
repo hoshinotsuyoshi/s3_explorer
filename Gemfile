@@ -23,6 +23,8 @@ group :development do
 end
 
 group :test do
+  gem 'capybara'
+  gem 'poltergeist'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'simplecov', require: false
