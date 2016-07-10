@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 class BucketsController < ApplicationController
-  before_action :set_bucket, only: :show
-  before_action :set_s3_objects, only: :show
-
   # GET /buckets
   # GET /buckets.json
   def index
@@ -12,31 +9,6 @@ class BucketsController < ApplicationController
   # GET /buckets/1
   # GET /buckets/1.json
   def show
-    add_breadcrumb @bucket.name, bucket_path
-
-    prefixes = []
-
-    params[:prefix]&.split('/')&.each do |prefix|
-      prefixes << prefix
-      add_breadcrumb prefix, "/buckets/#{@bucket.name}"
-    end
-  end
-
-  private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_bucket
-    @bucket = Bucket.find(params[:id])
-  end
-
-  def set_s3_objects
-    @files = S3Object::File.select(
-      bucket: params[:id],
-      prefix: params[:prefix]
-    )
-    @folders = S3Object::Folder.select(
-      bucket: params[:id],
-      prefix: params[:prefix]
-    )
+    redirect_to(bucket_prefix_path(bucket_id: params[:id], prefix_id: ''))
   end
 end

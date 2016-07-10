@@ -9,7 +9,7 @@ p#notice = notice
           td
             i.fa.fa-folder-o aria-hidden=true
             span &nbsp;
-            = link_to folder.basename, bucket_path(@bucket, prefix: folder.prefix)
+            = link_to folder.basename, bucket_prefix_path(bucket_id: @bucket, prefix_id: folder.prefix)
       - @files.each do |file|
         tr
           td

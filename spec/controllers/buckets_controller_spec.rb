@@ -20,10 +20,12 @@ RSpec.describe BucketsController, type: :controller do
   end
 
   describe 'GET show' do
-    it 'assigns the requested bucket as @bucket' do
+    it 'redirect to bucket_prefix' do
       bucket = Bucket.new valid_attributes
       get :show, params: { id: bucket.to_param }, session: valid_session
-      expect(assigns(:bucket)).to eq(bucket)
+      expect(response).to redirect_to(
+        bucket_prefix_path(bucket_id: 'my-bucket', prefix_id: '')
+      )
     end
   end
 end

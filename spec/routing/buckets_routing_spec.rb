@@ -25,17 +25,5 @@ RSpec.describe BucketsController, type: :routing do
           )
       end
     end
-
-    context 'prefix contained' do
-      it 'routes to #show' do
-        expect(get: '/buckets/my-bucket/prefix/my-folder1/my-folder2')
-          .to route_to(
-            controller: 'prefix',
-            action: 'show',
-            bucket_id: 'my-bucket',
-            prefix_id: 'my-folder1/my-folder2'
-          )
-      end
-    end
   end
 end
