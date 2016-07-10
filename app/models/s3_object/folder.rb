@@ -23,7 +23,7 @@ module S3Object
     end
 
     def prefix
-      @prefix.prefix
+      @prefix[:prefix]
     end
 
     def basename
