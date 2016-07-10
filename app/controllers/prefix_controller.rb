@@ -8,9 +8,11 @@ class PrefixController < ApplicationController
 
     prefixes = []
 
-    params[:prefix]&.split('/')&.each do |prefix|
-      prefixes << prefix
-      add_breadcrumb prefix, "/buckets/#{@bucket.name}"
+    prefix = CGI.unescape(params[:prefix_id].to_s)
+
+    prefix.split('/').each do |pref|
+      prefixes << pref
+      add_breadcrumb pref, "/buckets/#{@bucket.name}"
     end
   end
 
