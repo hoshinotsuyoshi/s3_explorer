@@ -19,3 +19,7 @@ module S3Explorer
   class Application < Rails::Application
   end
 end
+
+Rails.application.configure do
+  config.autoload_paths += %W(#{config.root}/lib/breadcrumbs_builders)
+end

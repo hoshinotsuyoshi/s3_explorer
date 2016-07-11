@@ -54,6 +54,6 @@ html
         /! /.nav-collapse
   .container
     ol.breadcrumb
-      = render_breadcrumbs tag: :li, separator: ''
+      = render_breadcrumbs builder: ::PrefixBreadcrumbsBuilder
     = yield
     /! /container
