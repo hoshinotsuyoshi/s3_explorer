@@ -2,19 +2,9 @@
 class PrefixController < ApplicationController
   before_action :set_bucket, only: :show
   before_action :set_s3_objects, only: :show
+  before_action :set_breadcrumbs, only: :show
 
   def show
-    add_breadcrumb @bucket.name, bucket_path(@bucket)
-
-    prefixes = []
-
-    prefix = CGI.unescape(params[:prefix_id].to_s)
-
-    prefix.split('/').each do |pref|
-      prefixes << pref
-      add_breadcrumb pref,
-                     bucket_prefix_path(prefix_id: prefixes.join('/') + '/')
-    end
   end
 
   private
@@ -33,5 +23,19 @@ class PrefixController < ApplicationController
       bucket: params[:bucket_id],
       prefix: params[:prefix_id]
     )
+  end
+
+  def set_breadcrumbs
+    add_breadcrumb @bucket.name, bucket_path(@bucket)
+
+    prefixes = []
+
+    prefix = CGI.unescape(params[:prefix_id].to_s)
+
+    prefix.split('/').each do |pref|
+      prefixes << pref
+      add_breadcrumb pref,
+                     bucket_prefix_path(prefix_id: prefixes.join('/') + '/')
+    end
   end
 end
