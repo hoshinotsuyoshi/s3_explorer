@@ -21,5 +21,11 @@ describe 'main process', type: :feature, js: true do
     click_on 'my-folder1'
 
     expect(current_path).to eq('/buckets/my-bucket1.com/prefix/my-folder1%2F')
+
+    click_on 'S3Explorer'
+
+    sleep 0.1
+
+    expect(current_path).to eq('/buckets')
   end
 end
