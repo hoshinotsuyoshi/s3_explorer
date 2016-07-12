@@ -18,3 +18,5 @@
 
 # Ignore SimpleCov outputs.
 /coverage
+
+node_modules
