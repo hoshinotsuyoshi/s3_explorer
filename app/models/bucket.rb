@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+
+# s3 bucket class.
 class Bucket
   include ActiveModel::Model
 

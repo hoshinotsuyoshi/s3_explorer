@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+
+# prefix controller class.
 class PrefixController < ApplicationController
   before_action :set_bucket, only: :show
   before_action :set_s3_objects, only: :show

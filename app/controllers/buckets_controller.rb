@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+
+# bucket controller class.
 class BucketsController < ApplicationController
   # GET /buckets
   # GET /buckets.json
