@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rubycritic/rake_task'
 
 Rubycritic::RakeTask.new do |task|
@@ -5,7 +6,7 @@ Rubycritic::RakeTask.new do |task|
   # task.name    = 'something_special'
 
   # Glob pattern to match source files. Defaults to FileList['.'].
-  task.paths   = FileList['app']
+  task.paths = FileList['app']
 
   # You can pass all the options here in that are shown by "rubycritic -h" except for
   # "-p / --path" since that is set separately. Defaults to ''.
