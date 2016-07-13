@@ -1,24 +1,40 @@
-# README
+# S3Explorer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+S3Explorer is simple s3 GUI.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+```
+$ bin/setup
+```
 
-* System dependencies
+## Test
 
-* Configuration
+```
+$ bin/rake
+```
 
-* Database creation
+## Lint
 
-* Database initialization
+```
+$ bin/rake rubocop
+```
 
-* How to run the test suite
+#### With auto-correct
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ bin/rake rubocop:auto_correct
+```
 
-* Deployment instructions
+## Code Metrics
 
-* ...
+```
+$ bin/rake rubycritic
+```
+
+## Other Tasks
+
+```
+$ bin/rake -T
+```
+
