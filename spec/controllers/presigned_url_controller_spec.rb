@@ -10,7 +10,10 @@ RSpec.describe PresignedUrlController, type: :controller do
   describe 'Create' do
     it 'assigns presigned_url string as @presigned_url' do
       post :create,
-           params: { bucket_id: 'my-bucket', prefix_id: 'my-folder/my-file' },
+           params: {
+             bucket_id: 'my-bucket',
+             prefix_id: 'my-folder/my-file'
+           },
            session: valid_session
       expect(assigns(:presigned_url))
         .to be_valid_s3_presigned_url(path: '/my-bucket/my-folder/my-file')
