@@ -22,7 +22,7 @@ describe 'main process', type: :feature, js: true do
 
     expect(current_path).to eq('/buckets/my-bucket1.com/prefix/my-folder1%2F')
 
-    click_on 'S3Explorer'
+    click_on 'S3 Explorer'
 
     sleep 0.1
 
