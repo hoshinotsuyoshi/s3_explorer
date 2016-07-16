@@ -21,5 +21,5 @@ module S3Explorer
 end
 
 Rails.application.configure do
-  config.autoload_paths += %W(#{config.root}/lib/breadcrumbs_builders)
+  config.eager_load_paths += %W(#{config.root}/lib)
 end
