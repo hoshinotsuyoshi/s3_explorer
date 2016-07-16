@@ -38,5 +38,7 @@ group :test do
 end
 
 gem 'aws-sdk'
+gem 'bootstrap-sass'
 gem 'breadcrumbs_on_rails'
+gem 'font-awesome-rails'
 gem 'slim-rails'

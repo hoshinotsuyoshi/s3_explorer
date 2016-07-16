@@ -12,8 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
+ *= require gentelella/build/css/custom.min
  */
 
-//= require font-awesome/css/font-awesome.min
-//= require bootstrap/dist/css/bootstrap.min
-//= require gentelella/build/css/custom.min
+@import "bootstrap-sprockets";
+@import "bootstrap";
