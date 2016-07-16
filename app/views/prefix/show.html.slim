@@ -16,3 +16,22 @@ p#notice = notice
             i.fa.fa-file-text-o aria-hidden=true
             span &nbsp;
             = link_to file.key
+          td
+            .x_content
+              /! modals
+              /! Small modal
+              button.btn.btn-primary data-target=".bs-example-modal-sm" data-toggle="modal" type="button"  Small modal
+              .modal.fade.bs-example-modal-sm aria-hidden="true" role="dialog" style=("display: none;") tabindex="-1"
+                .modal-dialog.modal-sm
+                  .modal-content
+                    .modal-header
+                      button.close aria-label="Close" data-dismiss="modal" type="button" 
+                        span aria-hidden="true"  ×
+                      h4#myModalLabel2.modal-title Modal title
+                    .modal-body
+                      h4 Text in a modal
+                      p Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+                      p Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+                    .modal-footer
+                      button.btn.btn-default data-dismiss="modal" type="button"  Close
+              /! /modals
