@@ -20,7 +20,7 @@ RSpec.describe S3Object::File, type: :model do
     it 'returns presigned_url' do
       file = S3Object::File.new({ key: 'my-file' }, bucket: 'my-bucket')
       presigned_url = file.presigned_url
-      expect(presigned_url).to be_start_with 'http://'
+      expect(presigned_url).to match /\Ahttps?:\/\//
       expect(URI(presigned_url).path).to eq '/my-bucket/my-file'
       expect(presigned_url).to include 'X-Amz-Signature='
     end

@@ -40,7 +40,9 @@ module S3Object
       signer = Aws::S3::Presigner.new(client: s3)
       signer.presigned_url(:get_object,
                            bucket: bucket,
-                           key: @file[:key])
+                           key: @file[:key],
+                           expires_in: 1.day,
+                           secure: true)
     end
 
     def key
