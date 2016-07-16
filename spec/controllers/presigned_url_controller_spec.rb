@@ -14,6 +14,7 @@ RSpec.describe PresignedUrlController, type: :controller do
              bucket_id: 'my-bucket',
              prefix_id: 'my-folder/my-file'
            },
+           format: :json,
            session: valid_session
       expect(assigns(:presigned_url))
         .to be_valid_s3_presigned_url(path: '/my-bucket/my-folder/my-file')

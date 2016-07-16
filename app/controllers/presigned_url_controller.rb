@@ -2,6 +2,8 @@
 
 # presigned_url controller class.
 class PresignedUrlController < ApplicationController
+  protect_from_forgery with: :null_session
+
   def create
     file = S3Object::File.new(
       { key: params[:prefix_id] },
