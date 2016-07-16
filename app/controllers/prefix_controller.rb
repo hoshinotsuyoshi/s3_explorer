@@ -31,13 +31,15 @@ class PrefixController < ApplicationController
 
     prefixes = []
 
-    prefix = CGI.unescape(prefix_id.to_s)
-
-    prefix.split('/').each do |pref|
+    safe_prefix.split('/').each do |pref|
       prefixes << pref
       add_breadcrumb pref,
                      bucket_prefix_path(prefix_id: prefixes.join('/') + '/')
     end
+  end
+
+  def safe_prefix
+    CGI.unescape(prefix_id.to_s)
   end
 
   def bucket_id
