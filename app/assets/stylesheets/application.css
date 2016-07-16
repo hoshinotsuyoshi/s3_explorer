@@ -14,5 +14,6 @@
  *= require_self
  */
 
+//= require font-awesome/css/font-awesome.min
 //= require bootstrap/dist/css/bootstrap.min
 //= require gentelella/build/css/custom.min
