@@ -1,59 +1,178 @@
 doctype html
-html
+html lang="en"
   head
-    meta charset="utf-8" /
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     meta content="IE=edge" http-equiv="X-UA-Compatible" /
     meta content="width=device-width, initial-scale=1" name="viewport" /
-    title
-      | S3Explorer
+
     = csrf_meta_tags
-    link[rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"]
-    link[rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"]
-    link[rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous"]
-    script[src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"]
-    link href="/favicon.ico" rel="icon" /
-    title Theme Template for Bootstrap
+
+    link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" /
+    /! Font Awesome
+    link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" /
+    /! iCheck
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-  body role="document"
-    /! Fixed navbar
-    nav.navbar.navbar-inverse.navbar-fixed-top
-      .container
-        .navbar-header
-          button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button" 
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand href="/"  S3Explorer
-        #navbar.navbar-collapse.collapse
-          ul.nav.navbar-nav
-            li.active
-              a href="/"  Home
-            li
-              a href="#about"  About
-            li
-              a href="#contact"  Contact
-            li.dropdown
-              a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
-                | Dropdown
-                span.caret
-              ul.dropdown-menu
+    script[src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"]
+
+    title S3 Explorer
+  body.nav-md
+    .container.body
+      .main_container
+        .col-md-3.left_col
+          .left_col.scroll-view
+            .navbar.nav_title style=("border: 0;")
+              a.site_title href="/"
+                i.fa.fa-file
+                span &nbsp;
+                span S3 Explorer
+            .clearfix
+            br/
+            /! sidebar menu
+            #sidebar-menu.main_menu_side.hidden-print.main_menu
+              .menu_section.active
+                h3 General
+                ul.nav.side-menu style=""
+                  li.active
+                    a
+                      i.fa.fa-home
+                      | Home
+                      span.fa.fa-chevron-down
+                    ul.nav.child_menu style=("display: block;")
+                      li.current-page
+                        a href="https://colorlib.com/polygon/gentelella/index.html"  Dashboard
+                      li
+                        a href="https://colorlib.com/polygon/gentelella/index2.html"  Dashboard2
+                      li
+                        a href="https://colorlib.com/polygon/gentelella/index3.html"  Dashboard3
+                  li
+                    a
+                      i.fa.fa-clone
+                      | Buckets
+                      span.fa.fa-chevron-down
+                    ul.nav.child_menu
+                      li
+                        a href="https://colorlib.com/polygon/gentelella/fixed_sidebar.html"  Fixed Sidebar
+                      li
+                        a href="https://colorlib.com/polygon/gentelella/fixed_footer.html"  Fixed Footer
+            /! /sidebar menu
+            /! /menu footer buttons
+            .sidebar-footer.hidden-small
+              a data-original-title="Settings" data-placement="top" data-toggle="tooltip" title=""
+                span.glyphicon.glyphicon-cog aria-hidden="true"
+              a data-original-title="FullScreen" data-placement="top" data-toggle="tooltip" title=""
+                span.glyphicon.glyphicon-fullscreen aria-hidden="true"
+              a data-original-title="Lock" data-placement="top" data-toggle="tooltip" title=""
+                span.glyphicon.glyphicon-eye-close aria-hidden="true"
+              a data-original-title="Logout" data-placement="top" data-toggle="tooltip" title=""
+                span.glyphicon.glyphicon-off aria-hidden="true"
+            /! /menu footer buttons
+        /! top navigation
+        .top_nav
+          .nav_menu
+            nav role="navigation"
+              .nav.toggle
+                a#menu_toggle
+                  i.fa.fa-bars
+              ul.nav.navbar-nav.navbar-right
                 li
-                  a href="#"  Action
-                li
-                  a href="#"  Another action
-                li
-                  a href="#"  Something else here
-                li.divider role="separator" 
-                li.dropdown-header Nav header
-                li
-                  a href="#"  Separated link
-                li
-                  a href="#"  One more separated link
-        /! /.nav-collapse
-  .container
-    ol.breadcrumb
-      = render_breadcrumbs builder: ::PrefixBreadcrumbsBuilder
-    = yield
-    /! /container
+                  a.user-profile.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="javascript:;"
+                    = image_tag '/assets/images/img.jpg'
+                    | John Doe
+                    span.fa.fa-angle-down
+                  ul.dropdown-menu.dropdown-usermenu.pull-right
+                    li
+                      a href="javascript:;"  Profile
+                    li
+                      a href="javascript:;"
+                        span.badge.bg-red.pull-right 50%
+                        span Settings
+                    li
+                      a href="javascript:;"  Help
+                    li
+                      a href="https://colorlib.com/polygon/gentelella/login.html"
+                        i.fa.fa-sign-out.pull-right
+                        | Log Out
+                li.dropdown role="presentation"
+                  a.dropdown-toggle.info-number aria-expanded="false" data-toggle="dropdown" href="javascript:;"
+                    i.fa.fa-envelope-o
+                    span.badge.bg-green 6
+                  ul#menu1.dropdown-menu.list-unstyled.msg_list role="menu"
+                    li
+                      a
+                        span.image
+                          = image_tag '/assets/images/img.jpg', alt: 'Profile Image'
+                        span
+                          span John Smith
+                          span.time 3 mins ago
+                        span.message
+                          | Film festivals used to be do-or-die moments for movie makers. They were where...
+                    li
+                      a
+                        span.image
+                          = image_tag '/assets/images/img.jpg', alt: 'Profile Image'
+                        span
+                          span John Smith
+                          span.time 3 mins ago
+                        span.message
+                          | Film festivals used to be do-or-die moments for movie makers. They were where...
+                    li
+                      a
+                        span.image
+                          = image_tag '/assets/images/img.jpg', alt: 'Profile Image'
+                        span
+                          span John Smith
+                          span.time 3 mins ago
+                        span.message
+                          | Film festivals used to be do-or-die moments for movie makers. They were where...
+                    li
+                      a
+                        span.image
+                          = image_tag '/assets/images/img.jpg', alt: 'Profile Image'
+                        span
+                          span John Smith
+                          span.time 3 mins ago
+                        span.message
+                          | Film festivals used to be do-or-die moments for movie makers. They were where...
+                    li
+                      .text-center
+                        a
+                          strong See All Alerts
+                          i.fa.fa-angle-right
+        /! /top navigation
+        /! page content
+        .right_col role="main" style=("min-height: 1647px;")
+          /! top tiles
+          /! /top tiles
+          .row
+            .col-md-12.col-sm-12.col-xs-12
+          .row
+            ol.breadcrumb
+              = render_breadcrumbs builder: ::PrefixBreadcrumbsBuilder
+            = yield
+
+            .col-md-4.col-sm-4.col-xs-12
+            .col-md-4.col-sm-4.col-xs-12
+            .col-md-4.col-sm-4.col-xs-12
+          .row
+            .col-md-4.col-sm-4.col-xs-12
+            .col-md-8.col-sm-8.col-xs-12
+              .row
+                .col-md-12.col-sm-12.col-xs-12
+              .row
+                /! Start to do list
+                .col-md-6.col-sm-6.col-xs-12
+                /! End to do list
+                /! start of weather widget
+                .col-md-6.col-sm-6.col-xs-12
+                /! end of weather widget
+        /! /page content
+        /! footer content
+        footer
+          .pull-right
+            | Gentelella - Bootstrap Admin Template by
+            a href="https://colorlib.com/"  Colorlib
+          .clearfix
+        /! /footer content
+    /! Custom Theme Scripts
+    = javascript_include_tag asset_path "gentelella/build/js/custom.min"
