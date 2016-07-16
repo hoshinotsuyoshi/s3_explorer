@@ -24,7 +24,7 @@ describe 'main process', type: :feature, js: true do
 
     click_on 'S3 Explorer'
 
-    sleep 0.1
+    sleep 0.5
 
     expect(current_path).to eq('/buckets')
   end
