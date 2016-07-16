@@ -12,6 +12,20 @@ RSpec.describe S3Object::File, type: :model do
     end
   end
 
+  describe '#presigned_url' do
+    before do
+      create_s3_content(bucket: 'my-bucket', key: 'my-folder/my-file')
+    end
+
+    it 'returns presigned_url' do
+      file = S3Object::File.new({ key: 'my-file' }, bucket: 'my-bucket')
+      presigned_url = file.presigned_url
+      expect(presigned_url).to be_start_with 'http://'
+      expect(URI(presigned_url).path).to eq '/my-bucket/my-file'
+      expect(presigned_url).to include 'X-Amz-Signature='
+    end
+  end
+
   describe '#key' do
     it "returns same value of #initialize's first arg" do
       file = S3Object::File.new(key: 'my-file')

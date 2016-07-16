@@ -10,7 +10,7 @@ module S3Object
           bucket: bucket,
           prefix: prefix
         ).map do |file|
-          new(file)
+          new(file, bucket: bucket)
         end
       end
 
@@ -26,8 +26,21 @@ module S3Object
       end
     end
 
-    def initialize(file)
+    def initialize(file, bucket: nil)
       @file = file
+      @bucket = bucket
+    end
+
+    # Presigned URL.
+    # see http://docs.aws.amazon.com/sdkforruby/api/Aws/S3/Presigner.html
+    #
+    # @return [String] presigned url to get the file
+    def presigned_url
+      s3 = Aws::S3::Client.new
+      signer = Aws::S3::Presigner.new(client: s3)
+      signer.presigned_url(:get_object,
+                           bucket: bucket,
+                           key: @file[:key])
     end
 
     def key
@@ -41,5 +54,9 @@ module S3Object
         super
       end
     end
+
+    private
+
+    attr_reader :bucket
   end
 end
