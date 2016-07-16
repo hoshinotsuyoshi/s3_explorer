@@ -10,7 +10,9 @@ describe 'main process', type: :feature, js: true do
   it 'click bucket, folder, back-link' do
     visit '/buckets'
 
-    click_on 'my-bucket1.com'
+    within('table') do
+      click_on 'my-bucket1.com'
+    end
 
     click_on 'my-folder1'
 
