@@ -14,6 +14,7 @@ RSpec.describe PrefixController, type: :controller do
       get :show,
           params: { bucket_id: 'my-bucket', prefix_id: 'my-folder/' },
           session: valid_session
+      expect(assigns(:buckets)).to eq([bucket])
       expect(assigns(:bucket)).to eq(bucket)
       expect(assigns(:files)).to eq([file])
       expect(assigns(:folders)).to be_empty
@@ -25,6 +26,7 @@ RSpec.describe PrefixController, type: :controller do
       get :show,
           params: { bucket_id: 'my-bucket', prefix_id: '' },
           session: valid_session
+      expect(assigns(:buckets)).to eq([bucket])
       expect(assigns(:bucket)).to eq(bucket)
       expect(assigns(:files)).to be_empty
       expect(assigns(:folders)).to eq([folder])

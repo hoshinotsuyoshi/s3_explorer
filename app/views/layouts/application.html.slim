@@ -46,10 +46,9 @@ html lang="en"
                       | Buckets
                       span.fa.fa-chevron-down
                     ul.nav.child_menu style=("display: block;")
-                      li
-                        a href="javascript:;" Bucket1
-                      li
-                        a href="javascript:;" Bucket2
+                      - @buckets.each do |bucket|
+                        li
+                          = link_to bucket.name, bucket_path(bucket)
             /! /sidebar menu
             /! /menu footer buttons
             .sidebar-footer.hidden-small

@@ -3,6 +3,7 @@
 # prefix controller class.
 class PrefixController < ApplicationController
   before_action :set_bucket, only: :show
+  before_action :set_buckets, only: :show
   before_action :set_s3_objects, only: :show
   before_action :set_breadcrumbs, only: :show
 
@@ -13,6 +14,10 @@ class PrefixController < ApplicationController
 
   def set_bucket
     @bucket = Bucket.find(bucket_id)
+  end
+
+  def set_buckets
+    @buckets = Bucket.all
   end
 
   def set_s3_objects
