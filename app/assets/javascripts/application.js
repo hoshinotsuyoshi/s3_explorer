@@ -16,14 +16,3 @@
 //= require_tree .
 
 //= require bootstrap/dist/js/bootstrap.min
-
-$(document).on('ready page:load', function(){
-  $(document).on('ajax:success', 'form.fetch-url', function(e, data, status, xhr){
-    $(this).siblings('input.url').val(data["presigned_url"]);
-  });
-
-  $(document).on('ajax:error', 'form.fetch-url', function(e, data, status, xhr){
-    $(this).siblings('input.url').val(data["presigned_url"]);
-    alert('Failed.');
-  });
-})
