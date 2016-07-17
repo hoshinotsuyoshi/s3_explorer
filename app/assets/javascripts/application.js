@@ -18,9 +18,12 @@
 //= require bootstrap/dist/js/bootstrap.min
 
 $(document).on('ready page:load', function(){
-  $('form.fetch-url').on('ajax:success', function(e, data, status, xhr){
+  $(document).on('ajax:success', 'form.fetch-url', function(e, data, status, xhr){
     $(this).siblings('input.url').val(data["presigned_url"]);
-  }).on('ajax:error', function(e, xhr, status, error){
+  });
+
+  $(document).on('ajax:error', 'form.fetch-url', function(e, data, status, xhr){
+    $(this).siblings('input.url').val(data["presigned_url"]);
     alert('Failed.');
   });
 })
