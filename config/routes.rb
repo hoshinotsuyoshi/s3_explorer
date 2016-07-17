@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       'prefix/:prefix_id/presigned_url/create',
       constraints: { prefix_id: %r{[^\/]+} },
       to: 'presigned_url#create',
-      as: :presigned_url_create
+      as: :presigned_url
     )
   end
 end
