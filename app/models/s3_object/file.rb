@@ -38,6 +38,12 @@ module S3Object
       CGI.escape(@file[:key])
     end
 
+    alias prefix prefix_id
+
+    def presigned_url
+      PresignedUrl.new(self)
+    end
+
     def key
       ::File.basename @file[:key]
     end

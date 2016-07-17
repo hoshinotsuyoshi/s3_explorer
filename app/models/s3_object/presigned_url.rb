@@ -5,9 +5,8 @@ module S3Object
   class PresignedUrl
     include ActiveModel::Model
 
-    def initialize(bucket:, prefix:)
-      @bucket = bucket
-      @prefix = prefix
+    def initialize(file)
+      @file = file
     end
 
     # presigned full-path url
@@ -16,10 +15,17 @@ module S3Object
       s3 = Aws::S3::Client.new
       signer = Aws::S3::Presigner.new(client: s3)
       signer.presigned_url(:get_object,
-                           bucket: @bucket,
-                           key: CGI.unescape(@prefix),
+                           bucket: bucket,
+                           key: CGI.unescape(CGI.unescape(prefix)),
                            expires_in: 1.day,
-                           secure: true)
+                           secure: true).tap do |s|
+      end
+    end
+
+    delegate :bucket, :prefix, to: :@file
+
+    def to_h
+      { bucket_id: bucket, prefix_id: prefix }
     end
   end
 end
