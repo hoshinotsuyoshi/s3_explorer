@@ -31,7 +31,6 @@ p#notice = notice
                   .modal-body.modal-presigned-url
                     h4 Expire In 1 day
                     = form_tag bucket_presigned_url_create_path(bucket_id: file.bucket_id, prefix_id: file.prefix_id), "accept-charset" => "UTF-8" , "data-remote" => "true", method: "post"
-                      input name="utf8" type="hidden" value="✓"
                       input type="submit" name="commit" value="Search" data-disable-with="Search"
                     input value="#{file.hash}"
                   .modal-footer.modal-presigned-url
