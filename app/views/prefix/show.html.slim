@@ -19,9 +19,9 @@ p#notice = notice
           td
             /! modals
             /! Small modal
-            button.btn.btn-default.btn-xs data-target=".bs-example-modal-sm" data-toggle="modal" type="button"
+            button.btn.btn-default.btn-xs data-target="#bs-example-modal-sm-#{file.hash}" data-toggle="modal" type="button"
               span.glyphicon.glyphicon-paperclip aria-hidden="true"
-            .modal.fade.bs-example-modal-sm.modal-presigned-url aria-hidden="true" role="dialog" style=("display: none;") tabindex="-1"
+            .modal.fade.modal-presigned-url aria-hidden="true" role="dialog" style=("display: none;") tabindex="-1" id=("bs-example-modal-sm-#{file.hash}")
               .modal-dialog.modal-sm
                 .modal-content
                   .modal-header.modal-presigned-url
@@ -30,7 +30,7 @@ p#notice = notice
                     h4#myModalLabel2.modal-title Pre-Signed URL
                   .modal-body.modal-presigned-url
                     h4 Expire In 1 day
-                    input
+                    input value="#{file.hash}"
                   .modal-footer.modal-presigned-url
                     button.btn.btn-default data-dismiss="modal" type="button"  Close
             /! /modals
