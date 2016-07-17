@@ -5,10 +5,10 @@ class PresignedUrlController < ApplicationController
   protect_from_forgery with: :null_session
 
   def create
-    file = S3Object::File.new(
-      { key: params[:prefix_id] },
-      bucket: params[:bucket_id]
+    presigned_url = S3Object::PresignedUrl.new(
+      bucket: params[:bucket_id],
+      prefix: params[:prefix_id]
     )
-    @presigned_url = file.presigned_url
+    @presigned_url = presigned_url.to_s
   end
 end

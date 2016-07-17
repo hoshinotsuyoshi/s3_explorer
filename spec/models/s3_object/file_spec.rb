@@ -12,14 +12,6 @@ RSpec.describe S3Object::File, type: :model do
     end
   end
 
-  describe '#presigned_url' do
-    it 'returns presigned_url' do
-      file = S3Object::File.new({ key: 'my-file' }, bucket: 'my-bucket')
-      expect(file.presigned_url)
-        .to be_valid_s3_presigned_url(path: '/my-bucket/my-file')
-    end
-  end
-
   describe '#key' do
     it "returns same value of #initialize's first arg" do
       file = S3Object::File.new(key: 'my-file')

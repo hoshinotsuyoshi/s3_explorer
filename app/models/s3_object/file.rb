@@ -38,20 +38,6 @@ module S3Object
       CGI.escape(@file[:key])
     end
 
-    # Presigned URL.
-    # see http://docs.aws.amazon.com/sdkforruby/api/Aws/S3/Presigner.html
-    #
-    # @return [String] presigned url to get the file
-    def presigned_url
-      s3 = Aws::S3::Client.new
-      signer = Aws::S3::Presigner.new(client: s3)
-      signer.presigned_url(:get_object,
-                           bucket: bucket,
-                           key: CGI.unescape(@file[:key]),
-                           expires_in: 1.day,
-                           secure: true)
-    end
-
     def key
       ::File.basename @file[:key]
     end
