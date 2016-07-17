@@ -35,7 +35,7 @@ module S3Object
     alias bucket_id bucket
 
     def prefix_id
-      @file[:key]
+      CGI.escape(@file[:key])
     end
 
     # Presigned URL.
@@ -47,7 +47,7 @@ module S3Object
       signer = Aws::S3::Presigner.new(client: s3)
       signer.presigned_url(:get_object,
                            bucket: bucket,
-                           key: @file[:key],
+                           key: CGI.unescape(@file[:key]),
                            expires_in: 1.day,
                            secure: true)
     end

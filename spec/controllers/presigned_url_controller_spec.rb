@@ -12,7 +12,7 @@ RSpec.describe PresignedUrlController, type: :controller do
       post :create,
            params: {
              bucket_id: 'my-bucket',
-             prefix_id: 'my-folder/my-file'
+             prefix_id: 'my-folder%2Fmy-file'
            },
            format: :json,
            session: valid_session
