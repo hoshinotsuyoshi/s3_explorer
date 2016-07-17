@@ -32,6 +32,11 @@ module S3Object
     end
 
     attr_reader :bucket
+    alias bucket_id bucket
+
+    def prefix_id
+      @file[:key]
+    end
 
     # Presigned URL.
     # see http://docs.aws.amazon.com/sdkforruby/api/Aws/S3/Presigner.html
