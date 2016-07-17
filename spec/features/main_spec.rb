@@ -22,7 +22,7 @@ describe 'main process', type: :feature, js: true do
 
     expect(page).not_to have_content 'Pre-Signed'
 
-    find("button.btn.btn-default.btn-xs").click
+    find('button.btn.btn-default.btn-xs').click
 
     sleep 0.1
 
@@ -34,7 +34,8 @@ describe 'main process', type: :feature, js: true do
 
     fetched_url = find('input.url').value
     expect(fetched_url).to be_start_with('http://127.0.0.1')
-    expect(URI(fetched_url).path).to eq('/my-bucket1.com/my-folder1/my-folder2/my-file1')
+    expect(URI(fetched_url).path)
+      .to eq('/my-bucket1.com/my-folder1/my-folder2/my-file1')
 
     click_on 'Close'
 
