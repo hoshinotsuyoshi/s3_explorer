@@ -31,6 +31,8 @@ module S3Object
       @bucket = bucket
     end
 
+    attr_reader :bucket
+
     # Presigned URL.
     # see http://docs.aws.amazon.com/sdkforruby/api/Aws/S3/Presigner.html
     #
@@ -56,9 +58,5 @@ module S3Object
         super
       end
     end
-
-    private
-
-    attr_reader :bucket
   end
 end
