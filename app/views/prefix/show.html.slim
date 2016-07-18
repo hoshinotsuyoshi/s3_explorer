@@ -31,7 +31,8 @@ p#notice = notice
                     h4#myModalLabel2.modal-title Get shareable link
                     p Expire In 1 day
                   .modal-body.modal-presigned-url
-                    = link_to('Fetch', [@bucket, file], remote: true, class: 'fetch-url')
+                    = link_to([@bucket, file], remote: true, class: 'fetch-url') do
+                      button.btn.btn-default.btn-xs type="button" Get
                     input.url value=""
                   .modal-footer.modal-presigned-url
                     button.btn.btn-default data-dismiss="modal" type="button"  Close

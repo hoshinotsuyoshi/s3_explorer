@@ -28,7 +28,9 @@ describe 'main process', type: :feature, js: true do
 
     expect(page).to have_content 'Get shareable link'
 
-    click_on 'Fetch'
+    within('a.fetch-url') do
+      click_on 'Get'
+    end
 
     sleep 0.1
 
