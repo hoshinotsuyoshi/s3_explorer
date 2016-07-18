@@ -16,11 +16,11 @@ module S3Object
       signer = Aws::S3::Presigner.new(client: s3)
       signer.presigned_url(:get_object,
                            bucket: bucket,
-                           key: prefix,
+                           key: fullpath,
                            expires_in: 1.day,
                            secure: true)
     end
 
-    delegate :bucket, :prefix, to: :@file
+    delegate :bucket, :fullpath, to: :@file
   end
 end

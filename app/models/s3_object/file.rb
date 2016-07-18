@@ -37,20 +37,22 @@ module S3Object
 
     attr_reader :bucket
 
-    def prefix
+    def fullpath
       @file[:key]
     end
 
-    def id
-      CGI.escape prefix
+    def escaped_fullpath
+      CGI.escape fullpath
     end
+
+    alias id escaped_fullpath
 
     def presigned_url
       PresignedUrl.new(self)
     end
 
     def key
-      ::File.basename prefix
+      ::File.basename fullpath
     end
 
     def ==(other)

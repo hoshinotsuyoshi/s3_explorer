@@ -7,11 +7,11 @@ RSpec.describe S3Object::PresignedUrl, type: :model do
         double(
           :file,
           bucket: 'my-bucket',
-          prefix: 'my-file'
+          fullpath: 'my-folder/my-file'
         )
       )
       expect(presigned_url.to_s)
-        .to be_valid_s3_presigned_url(path: '/my-bucket/my-file')
+        .to be_valid_s3_presigned_url(path: '/my-bucket/my-folder/my-file')
     end
   end
 end
