@@ -19,4 +19,9 @@
 # Ignore SimpleCov outputs.
 /coverage
 
+# Ignore modules installed by npm.
 node_modules
+
+# Ignore Yard docs.
+/doc
+.yardoc
