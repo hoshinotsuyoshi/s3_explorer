@@ -6,7 +6,7 @@ module S3Object
     protect_from_forgery with: :null_session
 
     def show
-      file_id = params[:id]
+      file_id = CGI.unescape(params[:id])
       file = S3Object::File.new({ key: file_id }, bucket: params[:bucket_id])
       @presigned_url = file.presigned_url.to_s
     end
