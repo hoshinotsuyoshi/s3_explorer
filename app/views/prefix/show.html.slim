@@ -34,8 +34,8 @@ p#notice = notice
                     = link_to([@bucket, file], remote: true, class: 'fetch-url') do
                       button.btn.btn-default.btn-xs type="button" Get
                     input.url value="" id=("got-url-#{file.hash}")
-                    button.btn data-clipboard-target="#got-url-#{file.hash}" id=("clipboard-#{file.hash}")
-                      i.fa.fa-clipboard aria-hidden=true
+                    button.btn.btn-default.btn-xs data-clipboard-target="#got-url-#{file.hash}" id=("clipboard-#{file.hash}") data-toggle="tooltip" data-placement="bottom" title="Copy to clipboard"
+                      img.clippy src="/assets/Octicons-clippy.svg" width="13" alt="Copy to clipboard"
                   .modal-footer.modal-presigned-url
                     button.btn.btn-default data-dismiss="modal" type="button"  Close
             /! /modals

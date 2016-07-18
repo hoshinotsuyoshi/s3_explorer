@@ -3,7 +3,10 @@ $(document).on 'ready page:load', ->
     $(this).siblings('input.url').val data['presigned_url']
 
     # create clipboard only a.fetch-url is clicked && ajax succeeded
-    clip = new Clipboard('#' + $(this).siblings('button.btn')[0].id)
+    clipboard = new Clipboard('#' + $(this).siblings('button.btn')[0].id)
+
+    clipboard.on 'success', (e) ->
+      e.clearSelection()
 
     return
 
