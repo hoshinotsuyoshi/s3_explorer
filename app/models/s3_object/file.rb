@@ -36,22 +36,25 @@ module S3Object
     end
 
     attr_reader :bucket
+
     alias bucket_id bucket
 
     def prefix_id
-      CGI.escape(@file[:key])
+      @file[:key]
     end
 
-    alias id prefix_id
-
     alias prefix prefix_id
+
+    def id
+      CGI.escape prefix_id
+    end
 
     def presigned_url
       PresignedUrl.new(self)
     end
 
     def key
-      ::File.basename @file[:key]
+      ::File.basename prefix_id
     end
 
     def ==(other)
