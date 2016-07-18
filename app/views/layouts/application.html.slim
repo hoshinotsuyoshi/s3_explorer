@@ -18,7 +18,7 @@ html lang="en"
           .left_col.scroll-view
             .navbar.nav_title style=("border: 0;")
               a.site_title href="/"
-                i.fa.fa-file
+                i.fa.fa-clone
                 span &nbsp;
                 span S3 Explorer
             .clearfix
@@ -48,7 +48,9 @@ html lang="en"
                     ul.nav.child_menu style=("display: block;")
                       - @buckets.each do |bucket|
                         li
-                          = link_to bucket.name, bucket_path(bucket)
+                          = link_to bucket_path(bucket) do
+                            i.fa.fa-square-o aria-hidden=true style='font-size:12px;'
+                            = bucket.name
             /! /sidebar menu
             /! /menu footer buttons
             .sidebar-footer.hidden-small

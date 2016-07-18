@@ -5,7 +5,7 @@
 
   / first
   li
-    i[aria-hidden="" class="fa fa-square-o"]
+    i.fa.fa-square-o aria-hidden=true
     span &nbsp;
     - if elements.first.path.present?
       a href="#{elements.first.path}" = elements.first.name
@@ -15,7 +15,7 @@
   / middle
   - elements[1..-2].each do |element|
     li
-      i[aria-hidden="" class="fa fa-folder-o"]
+      i.fa.fa-folder-o aria-hidden=true
       span &nbsp;
       - if element.path.present?
         a href="#{element.path}" = element.name
@@ -25,7 +25,7 @@
   / last
   - if elements.size > 1
     li
-      i[aria-hidden="" class="fa fa-folder-o"]
+      i.fa.fa-folder-o aria-hidden=true
       span &nbsp;
       = elements.last.name
 
