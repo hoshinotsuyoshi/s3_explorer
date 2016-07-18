@@ -16,3 +16,4 @@
 //= require_tree .
 
 //= require bootstrap/dist/js/bootstrap.min
+//= require clipboard/dist/clipboard.min

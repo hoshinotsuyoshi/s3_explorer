@@ -33,7 +33,9 @@ p#notice = notice
                   .modal-body.modal-presigned-url
                     = link_to([@bucket, file], remote: true, class: 'fetch-url') do
                       button.btn.btn-default.btn-xs type="button" Get
-                    input.url value=""
+                    input.url value="" id=("got-url-#{file.hash}")
+                    button.btn data-clipboard-target="#got-url-#{file.hash}" id=("clipboard-#{file.hash}")
+                      i.fa.fa-clipboard aria-hidden=true
                   .modal-footer.modal-presigned-url
                     button.btn.btn-default data-dismiss="modal" type="button"  Close
             /! /modals
