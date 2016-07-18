@@ -4,11 +4,9 @@ Rails.application.routes.draw do
   resources :buckets, only: [:show, :index], id: %r{[^/]+} do
     get 'prefix/:prefix_id', to: 'prefix#show', as: :prefix
     get 'prefix/', to: 'prefix#show'
-    post(
-      'prefix/:prefix_id/presigned_url/create',
-      constraints: { prefix_id: %r{[^\/]+} },
-      to: 'presigned_url#create',
-      as: :presigned_url
-    )
+
+    resources :file, only: :show, constraints: { file_id: %r{[^/]+} } do
+      resources :presigned_url, only: :create
+    end
   end
 end

@@ -30,7 +30,7 @@ p#notice = notice
                     h4#myModalLabel2.modal-title Pre-Signed URL
                   .modal-body.modal-presigned-url
                     h4 Expire In 1 day
-                    = form_tag bucket_presigned_url_path(file.presigned_url.to_h), "accept-charset" => "UTF-8" , "data-remote" => "true", method: "post", class: 'fetch-url'
+                    = form_tag bucket_file_presigned_url_index_path(file.presigned_url.to_h), "accept-charset" => "UTF-8" , "data-remote" => "true", method: "post", class: 'fetch-url'
                       input type="submit" name="commit" value="Fetch" data-disable-with="Fetching..."
                     input.url value=""
                   .modal-footer.modal-presigned-url
