@@ -8,7 +8,7 @@ module S3Object
     def show
       file_id = params[:id]
       file = S3Object::File.new({ key: file_id }, bucket: params[:bucket_id])
-      @presigned_url = S3Object::PresignedUrl.new(file).to_s
+      @presigned_url = file.presigned_url.to_s
     end
   end
 end
