@@ -26,7 +26,7 @@ describe 'main process', type: :feature, js: true do
 
     sleep 0.1
 
-    expect(page).to have_content 'Pre-Signed URL'
+    expect(page).to have_content 'Get shareable link'
 
     click_on 'Fetch'
 
