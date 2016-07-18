@@ -12,10 +12,10 @@ RSpec.describe S3Object::File, type: :model do
     end
   end
 
-  describe '#key' do
+  describe '#basename' do
     it "returns same value of #initialize's first arg" do
       file = S3Object::File.new(key: 'my-file')
-      expect(file.key).to eq 'my-file'
+      expect(file.basename).to eq 'my-file'
     end
   end
 

@@ -51,13 +51,13 @@ module S3Object
       PresignedUrl.new(self).to_s
     end
 
-    def key
-      ::File.basename fullpath
+    def basename
+      ::File.basename fullpath.to_s
     end
 
     def ==(other)
       if other.is_a? self.class
-        key == other.key
+        basename == other.basename
       else
         super
       end
