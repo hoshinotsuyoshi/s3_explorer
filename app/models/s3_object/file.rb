@@ -37,8 +37,6 @@ module S3Object
 
     attr_reader :bucket
 
-    alias bucket_id bucket
-
     def prefix
       @file[:key]
     end
