@@ -48,7 +48,7 @@ module S3Object
     alias id escaped_fullpath
 
     def presigned_url
-      PresignedUrl.new(self)
+      PresignedUrl.new(self).to_s
     end
 
     def key
