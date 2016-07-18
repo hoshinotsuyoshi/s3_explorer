@@ -39,14 +39,12 @@ module S3Object
 
     alias bucket_id bucket
 
-    def prefix_id
+    def prefix
       @file[:key]
     end
 
-    alias prefix prefix_id
-
     def id
-      CGI.escape prefix_id
+      CGI.escape prefix
     end
 
     def presigned_url
@@ -54,7 +52,7 @@ module S3Object
     end
 
     def key
-      ::File.basename prefix_id
+      ::File.basename prefix
     end
 
     def ==(other)
