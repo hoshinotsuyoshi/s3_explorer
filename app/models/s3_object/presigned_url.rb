@@ -18,7 +18,8 @@ module S3Object
                            bucket: bucket,
                            key: fullpath,
                            expires_in: 1.day,
-                           secure: true)
+                           secure: true,
+                           response_content_type: 'application/force-download')
     end
 
     delegate :bucket, :fullpath, to: :@file
