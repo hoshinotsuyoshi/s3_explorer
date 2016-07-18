@@ -27,7 +27,8 @@ module S3Object
     end
 
     # @private
-    # @param  file   [Aws::S3::Types::Object, Hash] A struct which includes :key attribute.
+    # @param  file   [Aws::S3::Types::Object, Hash]
+    #   A struct which includes :key attribute.
     # @option option [Hash]
     def initialize(file, bucket: nil)
       @file = file
