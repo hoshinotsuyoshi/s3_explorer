@@ -22,9 +22,5 @@ module S3Object
     end
 
     delegate :bucket, :prefix, to: :@file
-
-    def to_h
-      { bucket_id: bucket, file_id: prefix }
-    end
   end
 end
