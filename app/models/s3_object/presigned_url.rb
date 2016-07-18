@@ -14,12 +14,11 @@ module S3Object
     def to_s
       s3 = Aws::S3::Client.new
       signer = Aws::S3::Presigner.new(client: s3)
-      signer.presigned_url(:get_object,
+      CGI.unescape signer.presigned_url(:get_object,
                            bucket: bucket,
                            key: CGI.unescape(CGI.unescape(prefix)),
                            expires_in: 1.day,
-                           secure: true).tap do |s|
-      end
+                           secure: true)
     end
 
     delegate :bucket, :prefix, to: :@file

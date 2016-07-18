@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     get 'prefix/:prefix_id', to: 'prefix#show', as: :prefix
     get 'prefix/', to: 'prefix#show'
 
-    resources :file, only: :show, constraints: { file_id: %r{[^/]+} } do
-      resources :presigned_url, only: :create
+    namespace :s3_object do
+      resources :file, only: :show, constraints: { id: %r{[^/]+} }, defaults: { format: :json }
     end
   end
 end

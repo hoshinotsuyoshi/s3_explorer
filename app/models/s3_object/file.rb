@@ -31,12 +31,18 @@ module S3Object
       @bucket = bucket
     end
 
+    def persisted?
+      true
+    end
+
     attr_reader :bucket
     alias bucket_id bucket
 
     def prefix_id
       CGI.escape(@file[:key])
     end
+
+    alias id prefix_id
 
     alias prefix prefix_id
 

@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-RSpec.describe PresignedUrlController, type: :controller do
+RSpec.describe S3Object::FileController, type: :controller do
   let(:valid_session) { {} }
 
   before do
     create_s3_content(bucket: 'my-bucket', key: 'my-folder/my-file')
   end
 
-  describe 'Create' do
+  describe 'Show' do
     it 'assigns presigned_url string as @presigned_url' do
-      post :create,
+      get :show,
            params: {
              bucket_id: 'my-bucket',
-             file_id: 'my-folder%2Fmy-file'
+             id: 'my-folder%2Fmy-file'
            },
            format: :json,
            session: valid_session
