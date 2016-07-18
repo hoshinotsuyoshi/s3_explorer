@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-# presigned_url controller class.
 module S3Object
+  # s3-file controller class.
   class FileController < ApplicationController
     protect_from_forgery with: :null_session
 
