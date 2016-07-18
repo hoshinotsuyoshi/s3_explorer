@@ -30,7 +30,7 @@ p#notice = notice
                     h4#myModalLabel2.modal-title Pre-Signed URL
                   .modal-body.modal-presigned-url
                     h4 Expire In 1 day
-                    = link_to("link", [@bucket, file], remote: true)
+                    = link_to('Fetch', [@bucket, file], remote: true, class: 'fetch-url')
                     input.url value=""
                   .modal-footer.modal-presigned-url
                     button.btn.btn-default data-dismiss="modal" type="button"  Close
