@@ -178,6 +178,8 @@ GEM
       pry (>= 0.9.10)
     puma (3.4.0)
     rack (2.0.1)
+    rack-ip_address_restriction (0.1.1)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0)
@@ -347,6 +349,7 @@ DEPENDENCIES
   poltergeist
   pry-rails
   puma (~> 3.0)
+  rack-ip_address_restriction
   rails
   rails-controller-testing
   rails_12factor
