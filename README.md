@@ -2,6 +2,10 @@
 
 S3Explorer is simple s3 GUI.
 
+## Deploy to heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/hoshinotsuyoshi/s3_explorer)
+
 ## Setup
 
 ```
