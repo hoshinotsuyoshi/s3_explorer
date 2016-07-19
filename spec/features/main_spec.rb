@@ -22,7 +22,7 @@ describe 'main process', type: :feature, js: true do
 
     expect(page).not_to have_content 'Pre-Signed'
 
-    find('button.btn.btn-default.btn-xs').click
+    find('span.glyphicon.glyphicon-paperclip').click
 
     sleep 0.1
 

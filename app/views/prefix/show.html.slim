@@ -39,3 +39,7 @@ p#notice = notice
                   .modal-footer.modal-presigned-url
                     button.btn.btn-default data-dismiss="modal" type="button"  Close
             /! /modals
+          td
+            = link_to([@bucket, file], remote: true, class: 'download-file') do
+              button.btn.btn-default.btn-xs type="button"
+                i.fa.fa-download aria-hidden=true
