@@ -1,5 +1,8 @@
 # frozen_string_literal: true
-require 'rubocop'
-require 'rubocop/rake_task'
 
-RuboCop::RakeTask.new
+if Rails.env.development? # workaround
+  require 'rubocop'
+  require 'rubocop/rake_task'
+
+  RuboCop::RakeTask.new
+end
