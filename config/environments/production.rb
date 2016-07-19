@@ -28,4 +28,10 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
+
+  config.middleware.insert(
+    0,
+    Rack::IpAddressRestriction,
+    '/' => %w(127.0.0.1) + ENV.fetch('IP_ADDRS_WHITE_LIST').split(',')
+  )
 end
