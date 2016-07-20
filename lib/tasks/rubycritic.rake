@@ -4,6 +4,6 @@ if Rails.env.development? # workaround
   require 'rubycritic/rake_task'
 
   Rubycritic::RakeTask.new do |task|
-    task.paths = FileList['app']
+    task.paths = FileList['app', 'lib']
   end
 end
