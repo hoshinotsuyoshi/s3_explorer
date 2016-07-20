@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-if Rails.env.development? # workaround
-  require 'rubocop'
+begin
   require 'rubocop/rake_task'
-
   RuboCop::RakeTask.new
+rescue LoadError # rubocop:disable Lint/HandleExceptions
 end

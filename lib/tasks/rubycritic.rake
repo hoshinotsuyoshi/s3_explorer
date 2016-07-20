@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-if Rails.env.development? # workaround
+begin
   require 'rubycritic/rake_task'
-
   Rubycritic::RakeTask.new do |task|
     task.paths = FileList['app', 'lib']
   end
+rescue LoadError # rubocop:disable Lint/HandleExceptions
 end
