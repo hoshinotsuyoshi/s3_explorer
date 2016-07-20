@@ -1,44 +1,28 @@
 # S3Explorer
 
-S3Explorer is simple s3 GUI.
-
 ## Deploy to heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/hoshinotsuyoshi/s3_explorer)
 
-## Setup
+## Development
+
+### Setup
 
 ```
 $ bin/setup
 ```
 
-## Test
+### Test
 
 ```
 $ bin/rake
 ```
 
-## Lint
+### Lint, Metrics
 
 ```
-$ bin/rake rubocop
+$ bin/rake rubocop               # lint
+$ bin/rake rubocop:auto_correct  # lint with auto correct
+$ bin/rake rubycritic            # output code metrics
+$ bin/rake rails_best_practices  # output rails code metrics
 ```
-
-#### With auto-correct
-
-```
-$ bin/rake rubocop:auto_correct
-```
-
-## Code Metrics
-
-```
-$ bin/rake rubycritic
-```
-
-## Other Tasks
-
-```
-$ bin/rake -T
-```
-
