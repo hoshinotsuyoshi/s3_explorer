@@ -76,9 +76,9 @@ GEM
     coderay (1.1.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
-    coffee-rails (4.1.1)
+    coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.1.x)
+      railties (>= 4.0.0, < 5.2.x)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -142,9 +142,10 @@ GEM
     json (2.0.2)
     launchy (2.4.3)
       addressable (~> 2.3)
-    listen (3.0.8)
+    listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     lumberjack (1.0.10)
@@ -262,6 +263,7 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
+    ruby_dep (1.5.0)
     ruby_parser (3.8.3)
       sexp_processor (~> 4.1)
     rubycritic (2.9.4)
@@ -351,14 +353,14 @@ DEPENDENCIES
   byebug
   capybara
   codeclimate-test-reporter
-  coffee-rails (~> 4.1.0)
+  coffee-rails (~> 4.1)
   fakes3
   font-awesome-rails
   glint
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails
-  listen (~> 3.0.5)
+  listen (~> 3)
   poltergeist
   pry-rails
   puma (~> 3.0)
