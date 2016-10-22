@@ -1,4 +1,8 @@
 # frozen_string_literal: true
+
+SMALL_WAIT  = 0.1
+MEDIUM_WAIT = ENV['CI'] ? 1.0 : 0.1
+
 describe 'main process', type: :feature, js: true do
   before do
     create_s3_content(
@@ -24,7 +28,7 @@ describe 'main process', type: :feature, js: true do
 
     find('span.glyphicon.glyphicon-paperclip').click
 
-    sleep 0.1
+    sleep SMALL_WAIT
 
     expect(page).to have_content 'Get shareable link'
 
@@ -32,7 +36,7 @@ describe 'main process', type: :feature, js: true do
       click_on 'Get'
     end
 
-    sleep 0.1
+    sleep MEDIUM_WAIT
 
     fetched_url = find('input.url').value
     expect(fetched_url).to be_start_with('http://127.0.0.1')
@@ -47,7 +51,7 @@ describe 'main process', type: :feature, js: true do
 
     click_on 'S3 Explorer'
 
-    sleep 0.5
+    sleep MEDIUM_WAIT
 
     expect(current_path).to eq('/buckets')
   end
