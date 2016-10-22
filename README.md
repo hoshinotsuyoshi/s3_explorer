@@ -5,6 +5,7 @@
 [![Test Coverage](https://codeclimate.com/github/hoshinotsuyoshi/s3_explorer/badges/coverage.svg)](https://codeclimate.com/github/hoshinotsuyoshi/s3_explorer/coverage)
 [![Issue Count](https://codeclimate.com/github/hoshinotsuyoshi/s3_explorer/badges/issue_count.svg)](https://codeclimate.com/github/hoshinotsuyoshi/s3_explorer)
 [![Dependency Status](https://gemnasium.com/badges/github.com/hoshinotsuyoshi/s3_explorer.svg)](https://gemnasium.com/github.com/hoshinotsuyoshi/s3_explorer)
+[![Inline docs](http://inch-ci.org/github/hoshinotsuyoshi/s3_explorer.svg?branch=master)](http://inch-ci.org/github/hoshinotsuyoshi/s3_explorer)
 
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
