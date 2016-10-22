@@ -1,5 +1,7 @@
 # S3Explorer
 
+[![Build Status](https://travis-ci.org/hoshinotsuyoshi/s3_explorer.svg?branch=master)](https://travis-ci.org/hoshinotsuyoshi/s3_explorer)
+
 ## Deploy to heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/hoshinotsuyoshi/s3_explorer)
