@@ -1,6 +1,9 @@
 # S3Explorer
 
 [![Build Status](https://travis-ci.org/hoshinotsuyoshi/s3_explorer.svg?branch=master)](https://travis-ci.org/hoshinotsuyoshi/s3_explorer)
+[![Code Climate](https://codeclimate.com/github/hoshinotsuyoshi/s3_explorer/badges/gpa.svg)](https://codeclimate.com/github/hoshinotsuyoshi/s3_explorer)
+[![Test Coverage](https://codeclimate.com/github/hoshinotsuyoshi/s3_explorer/badges/coverage.svg)](https://codeclimate.com/github/hoshinotsuyoshi/s3_explorer/coverage)
+[![Issue Count](https://codeclimate.com/github/hoshinotsuyoshi/s3_explorer/badges/issue_count.svg)](https://codeclimate.com/github/hoshinotsuyoshi/s3_explorer)
 
 ## Deploy to heroku
 
