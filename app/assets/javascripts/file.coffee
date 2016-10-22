@@ -27,7 +27,7 @@ $(document).on 'ready page:load', ->
 
   # auto-all-select is useful.
   $(document).on 'focus', 'input.url', () ->
-    $(this).select();
+    $(this).select()
   $(document).on 'click', 'input.url', () ->
-    $(this).select();
+    $(this).select()
   return
