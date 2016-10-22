@@ -5,6 +5,8 @@
 [![Test Coverage](https://codeclimate.com/github/hoshinotsuyoshi/s3_explorer/badges/coverage.svg)](https://codeclimate.com/github/hoshinotsuyoshi/s3_explorer/coverage)
 [![Issue Count](https://codeclimate.com/github/hoshinotsuyoshi/s3_explorer/badges/issue_count.svg)](https://codeclimate.com/github/hoshinotsuyoshi/s3_explorer)
 
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+
 ## Deploy to heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/hoshinotsuyoshi/s3_explorer)
