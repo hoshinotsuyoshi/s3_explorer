@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 SMALL_WAIT  = 0.1
-MEDIUM_WAIT = ENV['CI'] ? 1.0 : 0.1
+MEDIUM_WAIT = ENV['CI'] ? 2.0 : 1.0
 
 describe 'main process', type: :feature, js: true do
   before do
     create_s3_content(
-      bucket: 'my-bucket1.com',
+      bucket: 'my-bucket',
       key: 'my-folder1/my-folder2/my-file1'
     )
   end
@@ -15,7 +15,7 @@ describe 'main process', type: :feature, js: true do
     visit '/buckets'
 
     within('table') do
-      click_on 'my-bucket1.com'
+      click_on 'my-bucket'
     end
 
     click_on 'my-folder1'
@@ -41,13 +41,13 @@ describe 'main process', type: :feature, js: true do
     fetched_url = find('input.url').value
     expect(fetched_url).to be_start_with('http://127.0.0.1')
     expect(URI(fetched_url).path)
-      .to eq('/my-bucket1.com/my-folder1/my-folder2/my-file1')
+      .to eq('/my-bucket/my-folder1/my-folder2/my-file1')
 
     click_on 'Close'
 
     click_on 'my-folder1'
 
-    expect(current_path).to eq('/buckets/my-bucket1.com/prefix/my-folder1%2F')
+    expect(current_path).to eq('/buckets/my-bucket/prefix/my-folder1%2F')
 
     click_on 'S3 Explorer'
 

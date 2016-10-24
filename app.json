@@ -9,8 +9,11 @@
     "AWS_SECRET_ACCESS_KEY": {
       "description": "AWS_SECRET_ACCESS_KEY"
     },
+    "BUCKET_NAME_LIST": {
+      "description": "Bucket names. Splited by commas. e.g. 'bucket_a,bucket_b'"
+    },
     "IP_ADDRS_WHITE_LIST": {
-      "description": "Addresses white list. split by comma"
+      "description": "Addresses white list. Splited by commas."
     }
   },
   "buildpacks": [

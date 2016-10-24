@@ -5,8 +5,9 @@ class Bucket
   include ActiveModel::Model
 
   def self.all
-    s3 = Aws::S3::Client.new
-    s3.list_buckets.buckets.map { |bucket| new(name: bucket.name) }
+    ENV['BUCKET_NAME_LIST'].to_s.split(',').map do |bucket_name|
+      new(name: bucket_name)
+    end
   end
 
   def self.find(name)
