@@ -9,5 +9,6 @@ require: rubocop-rspec
 RSpec/ExpectActual: # bad for routing spec's matcher
   Exclude:
     - 'spec/routing/*'
-
-inherit_from: .rubocop_todo.yml
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/routing/*'
