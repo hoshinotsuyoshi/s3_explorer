@@ -8,12 +8,3 @@
 
 # Offense count: 10
 # Configuration parameters: Max.
-RSpec/ExampleLength:
-  Exclude:
-    - 'spec/controllers/prefix_controller_spec.rb'
-    - 'spec/controllers/s3_object/file_controller_spec.rb'
-    - 'spec/features/main_spec.rb'
-    - 'spec/models/s3_object/presigned_url_spec.rb'
-    - 'spec/routing/buckets_routing_spec.rb'
-    - 'spec/routing/file_routing_spec.rb'
-    - 'spec/routing/prefix_routing_spec.rb'
