@@ -6,11 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 1
-RSpec/DescribeClass:
-  Exclude:
-    - 'spec/support/overridden_equalness.rb'
-
 # Offense count: 10
 # Configuration parameters: Max.
 RSpec/ExampleLength:
