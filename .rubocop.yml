@@ -2,3 +2,6 @@ AllCops:
   TargetRubyVersion: 2.3
 Rails:
   Enabled: true
+
+# gem 'rubocop-rspec'
+require: rubocop-rspec

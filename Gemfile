@@ -22,6 +22,7 @@ end
 group :development do
   gem 'rails_best_practices', require: false
   gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
   gem 'rubycritic', require: false
   gem 'web-console'
   gem 'listen', '~> 3'
