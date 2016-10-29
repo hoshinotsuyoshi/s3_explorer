@@ -3,6 +3,7 @@
 SMALL_WAIT  = 0.1
 MEDIUM_WAIT = ENV['CI'] ? 2.0 : 1.0
 
+# rubocop:disable RSpec/MultipleExpectations
 describe 'main process', type: :feature, js: true do
   before do
     create_s3_content(
@@ -56,3 +57,4 @@ describe 'main process', type: :feature, js: true do
     expect(current_path).to eq('/buckets')
   end
 end
+# rubocop:enable RSpec/MultipleExpectations

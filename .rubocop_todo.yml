@@ -25,7 +25,3 @@ RSpec/ExpectActual:
     - 'spec/routing/file_routing_spec.rb'
     - 'spec/routing/prefix_routing_spec.rb'
     - 'spec/routing/top_routing_spec.rb'
-
-# Offense count: 3
-RSpec/MultipleExpectations:
-  Max: 7
