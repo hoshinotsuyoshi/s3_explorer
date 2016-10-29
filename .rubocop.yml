@@ -5,3 +5,4 @@ Rails:
 
 # gem 'rubocop-rspec'
 require: rubocop-rspec
+inherit_from: .rubocop_todo.yml
