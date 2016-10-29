@@ -4,8 +4,8 @@ RSpec.describe S3Object::PresignedUrl, type: :model do
   describe '#to_s' do
     it 'returns presigned_url' do
       presigned_url = S3Object::PresignedUrl.new(
-        double(
-          :file,
+        instance_double(
+          'S3Object::File',
           bucket: 'my-bucket',
           fullpath: 'my-folder/my-file'
         )

@@ -29,9 +29,3 @@ RSpec/ExpectActual:
 # Offense count: 3
 RSpec/MultipleExpectations:
   Max: 7
-
-# Offense count: 1
-# Configuration parameters: IgnoreSymbolicNames.
-RSpec/VerifiedDoubles:
-  Exclude:
-    - 'spec/models/s3_object/presigned_url_spec.rb'
