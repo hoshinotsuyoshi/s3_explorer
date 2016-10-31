@@ -11,3 +11,14 @@ test:
     - bundle exec rake
     - bundle exec rake rubocop
     - bundle exec rake rubycritic
+deployment:
+  production:
+    branch: master
+    commands:
+      - |
+        if [ -z "${BUNDLE_UPDATE}" ] ; then
+          echo "noop"
+        else
+          gem install circleci-bundle-update-pr
+          circleci-bundle-update-pr CircleCI circleci@example.com
+        fi
