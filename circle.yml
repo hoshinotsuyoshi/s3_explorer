@@ -1,0 +1,13 @@
+machine:
+  timezone: Asia/Tokyo
+  environment:
+    AWS_ACCESS_KEY_ID: "AKIAIOSFODNN7EXAMPLE" # example
+    AWS_REGION: "us-east-1"
+    AWS_SECRET_ACCESS_KEY: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY" # example
+  pre:
+    - sudo curl --output /usr/local/bin/phantomjs https://s3.amazonaws.com/circle-downloads/phantomjs-2.1.1
+test:
+  override:
+    - bundle exec rake
+    - bundle exec rake rubocop
+    - bundle exec rake rubycritic
