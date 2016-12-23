@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.4.0'
 
 gem 'coffee-rails', '~> 4.1'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'puma', '~> 3.0'
 gem 'rails'
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5'
 gem 'turbolinks', '~> 5.x'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'uglifier', '>= 1.3.0'
