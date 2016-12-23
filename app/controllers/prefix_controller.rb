@@ -7,8 +7,7 @@ class PrefixController < ApplicationController
   before_action :set_s3_objects, only: :show
   before_action :set_breadcrumbs, only: :show
 
-  def show
-  end
+  def show; end
 
   private
 
