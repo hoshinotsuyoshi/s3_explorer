@@ -8,6 +8,8 @@ machine:
     - sudo curl --output /usr/local/bin/phantomjs https://s3.amazonaws.com/circle-downloads/phantomjs-2.1.1
 test:
   override:
+    - bundle exec ruby -e "puts RUBY_VERSION"
+    - bundle exec ruby -v
     - bundle exec rake
     - bundle exec rake rubocop
     - bundle exec rake rubycritic
