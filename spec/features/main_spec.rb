@@ -3,6 +3,7 @@
 SMALL_WAIT  = 0.1
 MEDIUM_WAIT = ENV['CI'] ? 2.0 : 1.0
 
+# rubocop:disable Metrics/BlockLength
 # rubocop:disable RSpec/ExampleLength
 # rubocop:disable RSpec/MultipleExpectations
 describe 'main process', type: :feature, js: true do
@@ -58,5 +59,6 @@ describe 'main process', type: :feature, js: true do
     expect(current_path).to eq('/buckets')
   end
 end
+# rubocop:enable Metrics/BlockLength
 # rubocop:enable RSpec/ExampleLength
 # rubocop:enable RSpec/MultipleExpectations
