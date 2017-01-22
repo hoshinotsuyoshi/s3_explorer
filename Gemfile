@@ -43,10 +43,6 @@ group :test do
   gem 'webmock'
 end
 
-group :production do
-  gem 'rails_12factor'
-end
-
 gem 'aws-sdk'
 gem 'bootstrap-sass'
 gem 'breadcrumbs_on_rails'
