@@ -1,0 +1,21 @@
+box: ruby:2.4.0
+build:
+    steps:
+        - script:
+            name: phantomjs
+            code: |
+                cd /tmp && \
+                curl -LO https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
+                tar jxf phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
+                mv phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin && \
+                rm -rf phantomjs-2.1.1-linux-x86_64.tar.bz2 phantomjs-2.1.1-linux-x86_64
+        - bundle-install
+        - script:
+            name: timezone
+            code: ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+        - script:
+            name: rspec
+            code: bundle exec rspec
+        - script:
+            name: rubocop
+            code: bundle exec rubocop
