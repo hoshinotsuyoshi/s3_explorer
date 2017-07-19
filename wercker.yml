@@ -19,9 +19,23 @@ build:
         - script:
             name: timezone
             code: ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+rspec_features:
+    steps:
         - script:
-            name: rspec
-            code: bundle exec rspec
+            name: rspec_features
+            code: bundle exec rspec spec/features
+rspec_models:
+    steps:
+        - script:
+            name: rspec_models
+            code: bundle exec rspec spec/models
+rspec_others:
+    steps:
+        - script:
+            name: rspec_others
+            code: bundle exec rspec spec/controllers spec/routing spec/requests
+rubocop:
+    steps:
         - script:
             name: rubocop
             code: bundle exec rubocop
