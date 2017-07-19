@@ -2,6 +2,12 @@ box: ruby:2.4.0
 build:
     steps:
         - script:
+            name: hello-world
+            code: echo 'hello world'
+
+rspec_features:
+    steps:
+        - script:
             name: phantomjs
             code: |
                 cd /tmp && \
@@ -19,23 +25,45 @@ build:
         - script:
             name: timezone
             code: ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-rspec_features:
-    steps:
         - script:
             name: rspec_features
             code: bundle exec rspec spec/features
+
 rspec_models:
     steps:
+        - bundle-install
+        - script:
+            name: nodejs npm
+            code: apt-get -y update && apt-get -y install nodejs npm
+        - script:
+            name: npm i
+            code: npm i
+        - script:
+            name: timezone
+            code: ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
         - script:
             name: rspec_models
             code: bundle exec rspec spec/models
+
 rspec_others:
     steps:
+        - bundle-install
+        - script:
+            name: nodejs npm
+            code: apt-get -y update && apt-get -y install nodejs npm
+        - script:
+            name: npm i
+            code: npm i
+        - script:
+            name: timezone
+            code: ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
         - script:
             name: rspec_others
             code: bundle exec rspec spec/controllers spec/routing spec/requests
+
 rubocop:
     steps:
+        - bundle-install
         - script:
             name: rubocop
             code: bundle exec rubocop
